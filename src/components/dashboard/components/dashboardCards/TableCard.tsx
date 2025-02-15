@@ -59,13 +59,13 @@ const TableCard = () => {
                 <span
                   className={`
                   ${
-                    content.status === "Done"
-                      ? "bg-green-100 text-green-200"
-                      : content.status === "In Review"
-                        ? "bg-gray-100 text-gray-200"
-                        : content.status === "In Progress"
-                          ? "bg-orange-100 text-orange-200"
-                          : "bg-red-100 text-red-200"
+                    content.status === "Review"
+                      ? "bg-gray-100 text-gray-200"
+                      : content.status === "Progress"
+                        ? "bg-orange-100 text-orange-200"
+                        : content.status === "Canceled"
+                          ? "bg-red-100 text-red-200"
+                          : "bg-default text-default"
                   }
                    px-2 py-1 rounded-md`}
                 >

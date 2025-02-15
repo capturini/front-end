@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="flex items-center justify-between">
         {/* Main Links */}
         <div className="flex items-center gap-6">
-          {SidebarMainLinks.map((link, index) => (
+          {SidebarMainLinks.map((link: { href: string; icon: JSX.Element; title: string }, index) => (
             <Link
               href={link.href.startsWith("/") ? link.href : `/${link.href}`}
               key={index}
@@ -32,7 +32,7 @@ const Navbar = () => {
 
         {/* Secondary Links */}
         <div className="flex items-center gap-6">
-          {SidebarSecondaryLinks.map((link, index) => (
+          {SidebarSecondaryLinks.map((link: { href: string; icon: JSX.Element; title: string }, index) => (
             <Link
               href={link.href.startsWith("/") ? link.href : `/${link.href}`}
               key={index}
