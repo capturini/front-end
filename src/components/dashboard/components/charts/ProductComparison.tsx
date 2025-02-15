@@ -1,37 +1,25 @@
 "use client"
 
-import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from "recharts"
+import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis, Tooltip, Legend } from "recharts"
 
 const data = [
   {
-    name: "Electronics",
-    ours: 4000,
-    competitor1: 2400,
-    competitor2: 2400,
+    category: "Jus de Fruits",
+    Ramy: 85,
+    Touja: 70,
+    Tazej: 60,
   },
   {
-    name: "Clothing",
-    ours: 3000,
-    competitor1: 1398,
-    competitor2: 2210,
+    category: "Sodas",
+    Ramy: 80,
+    Touja: 65,
+    Tazej: 55,
   },
   {
-    name: "Home",
-    ours: 2000,
-    competitor1: 9800,
-    competitor2: 2290,
-  },
-  {
-    name: "Food",
-    ours: 2780,
-    competitor1: 3908,
-    competitor2: 2000,
-  },
-  {
-    name: "Beauty",
-    ours: 1890,
-    competitor1: 4800,
-    competitor2: 2181,
+    category: "Nectar",
+    Ramy: 75,
+    Touja: 60,
+    Tazej: 50,
   },
 ]
 
@@ -39,17 +27,19 @@ export function ProductComparison() {
   return (
     <ResponsiveContainer width="100%" height={350}>
       <BarChart data={data}>
-        <XAxis dataKey="name" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
+        <XAxis dataKey="category" stroke="#888888" fontSize={12} tickLine={false} axisLine={false} />
         <YAxis
           stroke="#888888"
           fontSize={12}
           tickLine={false}
           axisLine={false}
-          tickFormatter={(value) => `$${value}`}
+          tickFormatter={(value) => `${value}%`}
         />
-        <Bar dataKey="ours" fill="#adfa1d" radius={[4, 4, 0, 0]} />
-        <Bar dataKey="competitor1" fill="#fa1d1d" radius={[4, 4, 0, 0]} />
-        <Bar dataKey="competitor2" fill="#1d6ffa" radius={[4, 4, 0, 0]} />
+        <Tooltip />
+        <Legend />
+        <Bar name="Ramy" dataKey="Ramy" fill="#adfa1d" radius={[4, 4, 0, 0]} />
+        <Bar name="Touja" dataKey="Touja" fill="#fa1d1d" radius={[4, 4, 0, 0]} />
+        <Bar name="Tazej" dataKey="Tazej" fill="#1d6ffa" radius={[4, 4, 0, 0]} />
       </BarChart>
     </ResponsiveContainer>
   )

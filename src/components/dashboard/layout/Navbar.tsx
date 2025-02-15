@@ -1,7 +1,6 @@
 "use client";
 
 import { Input } from "@/components/ui/input";
-import Image from "next/image";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
 import Link from "next/link";
 import useMediaQuery from "@/hooks/useResponsive";
@@ -36,15 +35,16 @@ const Navbar = () => {
 
   return (
     <nav className="flex justify-between overflow-y-hidden items-center h-16 bg-white text-black border-b border-b-gray-100 shadow-sm px-4 md:px-8">
-      {/* Logo */}
-      <Image
-        src="/Logo.svg"
-        alt="logo"
-        height={60}
-        width={100}
-        className="cursor-pointer"
+      {/* Logo/Title */}
+      <div 
+        className="flex items-center cursor-pointer gap-2" 
         onClick={toggle}
-      />
+      >
+        <div className="w-8 h-8 bg-primary rounded-sm flex items-center justify-center">
+          <span className="text-white font-bold text-lg">R</span>
+        </div>
+        <h1 className="text-xl font-bold text-primary">Ramy Analysis</h1>
+      </div>
 
       {/* Centered Navigation */}
       {!isXXs && (

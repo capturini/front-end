@@ -1,25 +1,28 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { Inter } from "next/font/google";
 import "@/styles/globals.css";
 
-const roboto = Poppins({
-  weight: ["400", "700"],
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Orka",
-  description: "a platform to plan and manage your logistics tasks",
+  title: "Ramy Analysis",
+  description: "Ramy Analysis Dashboard",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className={roboto.className}>{children}</body>
+      <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }

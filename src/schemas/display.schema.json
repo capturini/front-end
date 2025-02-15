@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Display Metrics Schema",
+  "type": "object",
+  "properties": {
+    "growth": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "date": { "type": "string", "format": "date" },
+          "coverage": { "type": "number", "minimum": 0, "maximum": 100 },
+          "target": { "type": "number", "minimum": 0, "maximum": 100 },
+          "growthRate": { "type": "number" }
+        },
+        "required": ["date", "coverage", "target", "growthRate"]
+      }
+    },
+    "metrics": {
+      "type": "object",
+      "properties": {
+        "totalPoints": { "type": "number", "minimum": 0 },
+        "activeWilayas": { "type": "number", "minimum": 0 },
+        "displayRate": { "type": "number", "minimum": 0, "maximum": 100 },
+        "weeklyChange": { "type": "number" },
+        "monthlyTarget": { "type": "number", "minimum": 0 },
+        "currentCompletion": { "type": "number", "minimum": 0, "maximum": 100 }
+      },
+      "required": [
+        "totalPoints",
+        "activeWilayas",
+        "displayRate",
+        "weeklyChange",
+        "monthlyTarget",
+        "currentCompletion"
+      ]
+    }
+  },
+  "required": ["growth", "metrics"]
+} 

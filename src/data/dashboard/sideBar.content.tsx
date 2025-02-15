@@ -1,29 +1,25 @@
-import { link } from "fs";
 import {
   ChartColumnBig,
   LayoutDashboard,
-  FolderOpenDot,
-  SlidersHorizontal,
-  CalendarFold,
+  Settings,
 } from "lucide-react";
 
 export const SidebarMainLinks = [
   {
-    title: "dashboard",
-    href: "/",
+    title: "Dashboard",
+    href: "/dashboard",
     icon: <LayoutDashboard />,
   },
   {
     title: "Statistiques",
-    href: "/statistics",
+    href: "/statistiques",
     icon: <ChartColumnBig />,
   },
-];
-
-export const SidebarSecondaryLinks = [
   {
     title: "Settings",
     href: "/settings",
-    icon: <SlidersHorizontal />,
+    icon: <Settings />,
   },
 ];
+
+export const SidebarSecondaryLinks = [];
